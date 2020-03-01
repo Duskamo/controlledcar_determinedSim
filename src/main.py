@@ -3,6 +3,7 @@ import time
 from graphics import *
 from Maze import *
 from Car import *
+from data import *
 
 class main():
 	def __init__(self):
@@ -27,8 +28,8 @@ class main():
 
 	def run(self):
 		time.sleep(5)
-		for i in range(40):
-			self.car.move(5,0)
+		for i in range(len(joystickInput)):
+			self.car.move(joystickInput[i]['x']*carSpeed,joystickInput[i]['y']*carSpeed)
 			time.sleep(0.05)
 
 		"""

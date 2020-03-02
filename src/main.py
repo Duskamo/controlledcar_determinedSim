@@ -26,32 +26,27 @@ class main():
 		win.getMouse() 
 		win.close() 
 
-	def run(self):
-		carBodyPoints = [(self.car.carBody.getP1().getX(),self.car.carBody.getP1().getY()),(self.car.carBody.getP2().getX(),self.car.carBody.getP2().getY()), (self.car.carBody.getP1().getX()+50,self.car.carBody.getP1().getY()),(self.car.carBody.getP1().getX(),self.car.carBody.getP1().getY()+50)]
-		print(carBodyPoints)
-
-		print(self.car.rotate_polygon(carBodyPoints,90))
+	def run(self):	
+		# with game loop
 		
-		"""
-		time.sleep(5)
-		for i in range(len(joystickInput)):
-			self.car.move(joystickInput[i]['x']*carSpeed,joystickInput[i]['y']*carSpeed)
-			time.sleep(0.05)
-		"""
-		"""
 		isRunning = True
+		i = 0
 
 		while isRunning:
 			""
 			# Process Events - Process inputs and other things
+			joystickInput = joystickInputs[i]
 
 			# Update - Update all objects that needs updating, ex position changes, physics 
+			self.car.update(joystickInput)
+			i += 1
 
 			# Draw - Render things on screen
+			self.car.move(joystickInput['x']*carSpeed,joystickInput['y']*carSpeed)
 
 			# Pause thread for framerate
 			time.sleep(0.017)
-		"""
+		
 
 
 if __name__ == "__main__":

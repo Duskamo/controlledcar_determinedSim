@@ -27,11 +27,17 @@ class main():
 		win.close() 
 
 	def run(self):
+		carBodyPoints = [(self.car.carBody.getP1().getX(),self.car.carBody.getP1().getY()),(self.car.carBody.getP2().getX(),self.car.carBody.getP2().getY()), (self.car.carBody.getP1().getX()+50,self.car.carBody.getP1().getY()),(self.car.carBody.getP1().getX(),self.car.carBody.getP1().getY()+50)]
+		print(carBodyPoints)
+
+		print(self.car.rotate_polygon(carBodyPoints,90))
+		
+		"""
 		time.sleep(5)
 		for i in range(len(joystickInput)):
 			self.car.move(joystickInput[i]['x']*carSpeed,joystickInput[i]['y']*carSpeed)
 			time.sleep(0.05)
-
+		"""
 		"""
 		isRunning = True
 

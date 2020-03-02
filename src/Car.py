@@ -51,7 +51,7 @@ class Car:
 
 
 	# **** HERE, PUT IN NEW CLASS AND BLAH BLAH BLAH
-	def rotate_point(point, angle, center_point=(0, 0)):
+	def rotate_point(self,point, angle, center_point=(0, 0)):
 		"""Rotates a point around center_point(origin by default)
 		Angle is in degrees.
 		Rotation is counter-clockwise
@@ -65,14 +65,14 @@ class Car:
 		new_point = (new_point[0] + center_point[0], new_point[1] + center_point[1])
 		return new_point
 
-	def rotate_polygon(polygon, angle, center_point=(0, 0)):
+	def rotate_polygon(self,polygon, angle, center_point=(0, 0)):
 		"""Rotates the given polygon which consists of corners represented as (x,y)
 		around center_point (origin by default)
 		Rotation is counter-clockwise
 		Angle is in degrees
-		"""
+		"""		
 		rotated_polygon = []
 		for corner in polygon:
-			rotated_corner = rotate_point(corner, angle, center_point)
+			rotated_corner = self.rotate_point(corner, angle, center_point)
 			rotated_polygon.append(rotated_corner)
 		return rotated_polygon

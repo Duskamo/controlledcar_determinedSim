@@ -19,9 +19,9 @@ class Maze:
 		self.l2 = Line(Point(250,350), Point(750,350))
 		self.l2.setWidth(5)
 
-		self.goalLine = Rectangle(Point(550,350), Point(750,550))
-		self.goalLine.setWidth(3)
-		self.goalLine.setFill("red")
+		self.goalField = Rectangle(Point(550,350), Point(750,550))
+		self.goalField.setWidth(3)
+		self.goalField.setFill("red")
 
 		self.goalText = Text(Point(650,450),"GOAL")
 		self.goalText.setSize(35)
@@ -31,7 +31,7 @@ class Maze:
 		self.c.draw(self.win) 
 		self.l1.draw(self.win)
 		self.l2.draw(self.win)
-		self.goalLine.draw(self.win)
+		self.goalField.draw(self.win)
 		self.goalText.draw(self.win)
 
 
